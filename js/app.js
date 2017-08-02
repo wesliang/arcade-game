@@ -55,12 +55,6 @@ Player.prototype.update = function() {
     this.y = 380;
     this.score++;
   }
-
-  //win condition not working yet
-  if (this.score === 5) {
-    ctx.fillStyle = 'white';
-    ctx.fillRect(0, 0, ctx.width, ctx.height);
-  }
 };
 
 Player.prototype.render = function() {
@@ -70,6 +64,13 @@ Player.prototype.render = function() {
   ctx.fillText("Score: " + this.score, 420, 80);
 
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
+
+  //win condition not working yet
+  if (this.score === 5) {
+    ctx.font ="50px Georgia";
+    ctx.fillStyle = 'white';
+    ctx.fillText("You Win!", 160, 280);
+  }
 };
 
 Player.prototype.handleInput = function(allowedKeys) {
