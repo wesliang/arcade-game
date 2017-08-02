@@ -65,7 +65,7 @@ Player.prototype.render = function() {
 
   ctx.drawImage(Resources.get(this.sprite), this.x, this.y);
 
-  //win condition not working yet
+  //win condition
   if (this.score === 5) {
     ctx.font ="50px Georgia";
     ctx.fillStyle = 'white';
