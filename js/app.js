@@ -20,6 +20,14 @@ Enemy.prototype.update = function(dt) {
     if (this.x > 600) {
       this.x = -100;
     }
+
+    //if player is near any enemy objects within a certain parameter
+    if ((player.x < this.x + 80) && (player.x > this.x - 80) && (player.y < this.y + 10) && (player.y > this.y - 10)) {
+      player.score--;
+      player.x = 200;
+      player.y = 380;
+      if (player.score < 0) {player.score = 0;}
+    }
 };
 
 // Draw the enemy on the screen, required method for game
@@ -43,6 +51,8 @@ Player.prototype.update = function() {
     this.y = 380;
     this.score++;
   }
+
+
 };
 
 // Player.prototype.score = function(score) {
@@ -56,6 +66,8 @@ Player.prototype.render = function() {
 
   ctx.fillText("Score: " + this.score, 420, 80);
 };
+
+
 
 Player.prototype.handleInput = function(allowedKeys) {
   //only move if there's space to
@@ -79,8 +91,6 @@ Player.prototype.handleInput = function(allowedKeys) {
       this.y += 80;
     }
   }
-  //handle collisions
-
 };
 // Now instantiate your objects.
 // Place all enemy objects in an array called allEnemies
