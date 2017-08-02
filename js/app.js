@@ -22,9 +22,9 @@ Enemy.prototype.update = function(dt) {
       this.x = -200;
     }
 
-    //detects collision by padding their locations and reduce score if occurs
+    //detects collision by padding their locations and reset score if occurs
     if ((player.x < this.x + 80) && (player.x > this.x - 80) && (player.y < this.y + 10) && (player.y > this.y - 10)) {
-      player.score--;
+      player.score = 0;
       player.x = 200;
       player.y = 380;
 
@@ -56,9 +56,10 @@ Player.prototype.update = function() {
     this.score++;
   }
 
-  //win condition
+  //win condition not working yet
   if (this.score === 5) {
-
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, ctx.width, ctx.height);
   }
 };
 
