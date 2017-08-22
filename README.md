@@ -1,5 +1,7 @@
 # Brogger (Frogger Clone with a Boy Instead)
 
+Try here: https://wesliang.github.io/arcade-game/
+
 Brogger is an interactive web browser game made with Javascript, HTML5 Canvas, and CSS. To play, you simply move with the arrow keys on your keyboard and try to get to the water without touching the bugs. Each bug you touch lowers your score and you have to start all over again. To win, you have to get to 5!
 
 ## Prerequisites
